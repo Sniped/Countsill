@@ -24,6 +24,8 @@ client.elevation = msg => {
     if (rep_role && msg.member.roles.has(rep_role.id)) permlvl = 3;
     let admin_role = msg.guild.roles.find(role => role.id === client.config.adminrole);
     if (admin_role && msg.member.roles.has(admin_role.id)) permlvl = 4;
+    let founder_role = msg.guild.roles.find(role => role.id === client.config.founderrole);
+    if (founder_role && msg.member.roles.has(founder_role.id)) permlvl = 4;
     if (msg.author.id === client.config.ownerid) permlvl = 5;
     return permlvl; 
 }
