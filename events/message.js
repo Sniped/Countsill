@@ -21,6 +21,10 @@ module.exports = {
             } catch (err) {
                 console.log(err);
             }
+        } else if (msg.channel.id == client.config.suggestionschannel && !msg.content.startsWith(client.config.prefix + 'suggest')) {
+            msg.delete();
+        } else if (msg.channel.id == client.config.commentschannel && !msg.content.startsWith(client.config.prefix + 'comment')) {
+            msg.delete();
         }
     }
 }
