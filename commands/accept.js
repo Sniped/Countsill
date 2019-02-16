@@ -17,7 +17,7 @@ module.exports = {
                 .setColor('#9ad68f');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
-                client.db.table('suggestions').get(id).update({ status: 'ACCEPTED', reason: reason }).run();
+                client.db.table('suggestions').get(id).update({ status: 'ACCEPTED', reason: reason, member: { id: msg.author.id, name: msg.author.username } }).run();
                 const notificationchannel = client.channels.find(channel => channel.id === client.config.notifysuggestionschannel);
                 notificationchannel.fetchMessage(data.notifymsg.id).then(nmsg => {
                     const notificationembed = new Discord.RichEmbed()
@@ -43,7 +43,7 @@ module.exports = {
                 .setColor('#9ad68f');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
-                client.db.table('comments').get(id).update({ status: 'ACCEPTED', reason: reason }).run();
+                client.db.table('comments').get(id).update({ status: 'ACCEPTED', reason: reason, member: { id: msg.author.id, name: msg.author.username } }).run();
                 const notificationschannel = client.channels.find(channel => channel.id === client.config.notifycommentschannel);
                 notificationschannel.fetchMessage(data.notifymsg.id).then(nmsg => {
                     const notificationembed = new Discord.RichEmbed()
