@@ -13,7 +13,7 @@ module.exports = {
             if (data.status == 'PENDING') {
                 const embed = new Discord.RichEmbed()
                 .setTitle('Your suggestion was denied by a council member.')
-                .setDescription(`**ID**: ${data.sid}\n\n**Reason**: ${reason}`)
+                .setDescription(`**ID**: ${data.sid}\n\n**Suggestion:**${data.suggestion}\n\n**Reason**: ${reason}`)
                 .setColor('#c56868');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
@@ -39,7 +39,7 @@ module.exports = {
             if (data.status == 'PENDING') {
                 const embed = new Discord.RichEmbed()
                 .setTitle('Your comment was denied by a council member.')
-                .setDescription(`**ID**: ${data.cid}\n\n**Reason**: ${reason}`)
+                .setDescription(`**ID**: ${data.cid}\n\n**Comment**:${data.comment}\n\n**Reason**: ${reason}`)
                 .setColor('#c56868');
                 const author = client.users.get(data.author.id);
                 author.send(embed);

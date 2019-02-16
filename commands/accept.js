@@ -13,7 +13,7 @@ module.exports = {
             if (data.status == 'PENDING') {
                 const embed = new Discord.RichEmbed()
                 .setTitle('Your suggestion was accepted by a council member. Thank you for the suggestion!')
-                .setDescription(`**ID**: ${data.sid}\n\n**Reason**: ${reason}`)
+                .setDescription(`**ID**: ${data.sid}\n\n**Suggestion**: ${data.suggestion}\n\n**Reason**: ${reason}`)
                 .setColor('#9ad68f');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
@@ -39,7 +39,7 @@ module.exports = {
             if (data.status == 'PENDING') {
                 const embed = new Discord.RichEmbed()
                 .setTitle('Your comment was accepted by a council member. Thank you for the comment!')
-                .setDescription(`**ID**: ${data.cid}\n\n**Reason**: ${reason}`)
+                .setDescription(`**ID**: ${data.cid}\n\n**Comment**: ${data.comment}\n\n**Reason**: ${reason}`)
                 .setColor('#9ad68f');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
