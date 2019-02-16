@@ -4,7 +4,7 @@ const fs = require('fs');
 client.config = require('./config.json');
 
 client.login(client.config.token);
-client.db = require('rethinkdbdash')({ db: 'countsill' });
+client.db = require('rethinkdbdash')({ db: 'countsill', password: client.config.rethinkpass });
 exports.client = client;
 
 fs.readdir('./events', (err, files) => {
