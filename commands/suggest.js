@@ -21,7 +21,7 @@ module.exports = {
             const embed = new Discord.RichEmbed()
             .setTitle(`A new suggestion was made by ${msg.author.username}.`)
             .setDescription(`**ID**: ${id}\n\n**Suggestion**: ${suggestion}`)
-            .setFooter(`Run the command !accept ${id} to accept this or !deny ${id} to deny it.`)
+            .setFooter(`Run the command !accept suggestion ${id} to accept this or !deny suggestion ${id} to deny it.`)
             .setColor('#b882d4');
             client.channels.get(client.config.notifysuggestionschannel).send(embed).then(nmsg => {
                 client.db.table('suggestions').insert({ sid: id, suggestion: suggestion, status: 'PENDING', author: { name: msg.author.username, id: msg.author.id }, notifymsg: { id: nmsg.id, channelid: nmsg.channel.id } }).run();
