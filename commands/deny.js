@@ -13,7 +13,7 @@ module.exports = {
             if (data.status == 'PENDING') {
                 const embed = new Discord.RichEmbed()
                 .setTitle('Your suggestion was denied by a council member.')
-                .setDescription(`**ID**: ${data.sid}\n\n**Suggestion:**${data.suggestion}\n\n**Reason**: ${reason}`)
+                .setDescription(`**ID**: ${data.sid}\n\n**Suggestion:** ${data.suggestion}\n\n**Reason**: ${reason}`)
                 .setColor('#c56868');
                 const author = client.users.get(data.author.id);
                 author.send(embed);
@@ -21,7 +21,7 @@ module.exports = {
                 const notificationchannel = client.channels.find(channel => channel.id === client.config.notifysuggestionschannel);
                 notificationchannel.fetchMessage(data.notifymsg.id).then(nmsg => {
                     const notificationembed = new Discord.RichEmbed()
-                    .setTitle(`A suggestion made by ${author.username} was accepted by ${msg.author.username}`)
+                    .setTitle(`A suggestion made by ${author.username} was denied by ${msg.author.username}`)
                     .setDescription(`**ID**: ${data.sid}\n\n**Suggestion**: ${data.suggestion}\n\n**Reason**: ${reason}`)
                     .setColor('#c56868');
                     nmsg.edit(notificationembed);
