@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 module.exports = {
     run: async (client, msg, args) => {
-        // !comment [suggestion-number] [comment]
         if (msg.channel.id != client.config.commentschannel) return msg.delete()
         msg.delete().then(async msg => {
             const comment = args.slice(0).join(' ');
