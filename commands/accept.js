@@ -59,7 +59,7 @@ module.exports = {
     meta: {
         aliases: ['accept'],
         description: 'Accept a specific suggestion',
-        permlvl: 3,
+        permlvl: 2,
         usage: ''        
     }
 }

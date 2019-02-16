@@ -59,7 +59,7 @@ module.exports = {
     meta: {
         aliases: ['deny'],
         description: 'Deny a specific suggestion',
-        permlvl: 3,
+        permlvl: 2,
         usage: ''        
     }
 }
