@@ -25,6 +25,6 @@ module.exports = {
             msg.delete();
         } else if (msg.channel.id == client.config.commentschannel && !msg.content.startsWith(client.config.prefix + 'comment')) {
             msg.delete();
-        } else if (!msg.guild) return msg.channel.send('hi');
+        } 
     }
 }
