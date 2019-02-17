@@ -1,7 +1,7 @@
 const fs = require('fs');
 module.exports = {
     run: async (client, msg) => {
-        if (msg.author.bot || !msg.guild) return;
+        if (msg.author.bot) return;
 
         else if (msg.content.startsWith(client.config.prefix)) {
             const args = msg.content.slice(client.config.prefix.length).trim().split(/ +/g);
@@ -25,6 +25,6 @@ module.exports = {
             msg.delete();
         } else if (msg.channel.id == client.config.commentschannel && !msg.content.startsWith(client.config.prefix + 'comment')) {
             msg.delete();
-        }
+        } else if (!msg.guild) return msg.channel.send('hi');
     }
 }
