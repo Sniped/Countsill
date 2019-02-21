@@ -13,7 +13,7 @@ module.exports = {
             const num2insert = nData.number+1;
             const id = nData.number;
             client.db.table('nData').get('suggestions').update({ number: num2insert }).run();
-            msg.channel.send(`:white_check_mark: **|** Thanks for the suggestion! Your suggestion has been forwarded to a represnetative, it will be looked at shortly.\nYour **ID**: ${id}`).then(cmsg => {
+            msg.channel.send(`:white_check_mark: **|** Thanks for the suggestion! Your suggestion has been forwarded to a representative, it will be looked at shortly.\nYour **ID**: ${id}`).then(cmsg => {
                 setTimeout(function() {
                     cmsg.delete();
                 }, 5000);
